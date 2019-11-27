@@ -4,6 +4,7 @@ import { Text, Input, Button } from 'react-native-elements';
 import Spacer from '../components/Spacer';
 
 // React Fragment - Don't show a wrapping element when the component renders on the screen.
+// Syntax: <> {elements} </>
 
 export default SignupScreen = ({ navigation }) => {
     const [email, setEmail] = useState('');
