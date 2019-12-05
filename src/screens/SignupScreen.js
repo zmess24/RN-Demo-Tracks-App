@@ -1,14 +1,18 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
 import { Context as AuthContext } from '../context/AuthContext';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
 
 export default SignupScreen = ({ navigation }) => {
-    const { state, signup } = useContext(AuthContext);
+    const { state, signup, clearErrorMessage } = useContext(AuthContext);
     
     return (
         <View style={styles.container}> 
+            <NavigationEvents 
+                onWillBlur={clearErrorMessage}
+            />
             <AuthForm 
                 headerText="Create Account"
                 errorMessage={state.errorMessage}
